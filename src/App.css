@@ -1,0 +1,55 @@
+:root{
+  --valid:url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='800px' height='800px' viewBox='0 0 48 48' version='1' xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 48 48'%3E%3Cpolygon fill='%2343A047' points='40.6,12.1 17,35.7 7.4,26.1 4.6,29 17,41.3 43.4,14.9'/%3E%3C/svg%3E");
+  --invalid:url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg fill='%23A04343' height='800px' width='800px' version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 208.891 208.891' xml:space='preserve'%3E%3Cpath d='M0,170l65.555-65.555L0,38.891L38.891,0l65.555,65.555L170,0l38.891,38.891l-65.555,65.555L208.891,170L170,208.891 l-65.555-65.555l-65.555,65.555L0,170z' /%3E%3C/svg%3E");
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.sin-form{
+  border-radius: 10px;
+  box-shadow:2px 2px 8px rgba(0,0,0,.3);
+  width: 600px;
+}
+.sin-form h1{
+  padding-bottom:5px;
+  border-bottom:1px solid #bebebe;
+  margin:0;
+}
+.sin-field{
+  padding:15px 0;
+  display:flex;
+  flex-direction:row;
+  gap:5px;
+  align-items: center;
+  justify-content: center;
+
+}
+.sin-field input[type="button"]{
+  height:1.7em;
+  line-height:1.75em;
+}
+.sin-field button{
+  background: #bebebe;
+  height:1.75em;
+  padding: 0 10px;
+  border-radius:5px;
+}
+.results{
+  height:1.5em;
+  padding-bottom:.5em;
+}
+.valid, .invalid{
+  display:inline-block;
+  padding-left:20px;
+  background:no-repeat left center / 1em auto;
+}
+
+.valid{
+  background-image:var(--valid);
+}
+.invalid{
+  background-image:var(--invalid);
+}
