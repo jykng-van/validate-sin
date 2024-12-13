@@ -8,8 +8,8 @@ The rules for SIN validation are given below.
 - The final calculated number is the sum of all the digits.
 - If the sum of all digits is divisble by 10, it is valid
 
-Numbers that are valid are: <br\>
-046454286 <br\>
+Numbers that are valid are: \
+046454286 \
 252929252
 
 This project was built using Vite
