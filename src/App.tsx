@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Validate from  './validate-sin';
+import { Validate } from  './validate-sin';
 import './App.css'
 
 function App() {
