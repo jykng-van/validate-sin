@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Validate SIN
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The rules for SIN validation are given below.
 
-Currently, two official plugins are available:
+- Consists of exactly 9 digits
+- Starting with the second digit, double every alternate digit in the SIN.
+- If doubling a digit results in a 10 or higher, then add together its individual digits (eg: 16 becomes 1+6).
+- The final calculated number is the sum of all the digits.
+- If the sum of all digits is divisble by 10, it is valid
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Numbers that are valid are:
+046454286
+252929252
 
-## Expanding the ESLint configuration
+This project was built using Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Running this project locally
 
-- Configure the top-level `parserOptions` property like this:
+In a terminal in the project's working directory, type: ```npm run dev``` for a dev build, or ```npm run build``` and then ```npm run preview```
+Both of these will mention a url like http://localhost:4173
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Validating the SIN
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Type the SIN in the input field, clicking the "Validate" button or pressing enter will in the field, should trigger the validation check.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```

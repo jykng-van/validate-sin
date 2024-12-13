@@ -1,17 +1,18 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import ValidateSin from  './validate-sin';
 import './App.css'
 
 function App() {
-  const sin = useRef<HTMLInputElement | null>(null);
+  const [sin, setSin ] = useState<string>('');
+  const [checkedSin, setCheckedSin] = useState<boolean>(false);
   const [valid, setValid] = useState<boolean>(false);
 
   function checkSin(){
-    if (sin.current){
-      const num = sin.current.value;
-      const valid_sin = ValidateSin(num);
+    if (sin){
+      const valid_sin = ValidateSin(sin);
       //046454286 should pass, also 252929252
       setValid(valid_sin);
+      setCheckedSin(true);
     }
   }
 
@@ -21,10 +22,12 @@ function App() {
         <h1>SIN Validation</h1>
         <div className="sin-field">
           <label htmlFor="sin">SIN</label>
-          <input type="text" id="sin" name="sin" ref={sin} />
+          <input type="text" id="sin" name="sin" value={sin} onChange={e=>setSin(e.target.value)} onKeyDown={e=>{if (e.key==='Enter'){
+            checkSin();
+          }}} />
           <button type="button" onClick={checkSin}>Validate</button>
         </div>
-        {sin.current !== null && sin.current.value && (
+        {sin !== '' && checkedSin && (
           <div className="results">
             <span className={valid ? 'valid':'invalid'}>{valid ? 'Valid SIN':'Invalid SIN'}</span>
           </div>
