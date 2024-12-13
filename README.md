@@ -34,3 +34,7 @@ Type the SIN in the input field, clicking the "Validate" button or pressing ente
 All 3 of those functions combined return the result of **Validate**
 
 The validation only returns true or false, and doesn't provide details of why the validation failed or passed.
+
+## Additional Notes
+
+This project has been implemented as a GitHub page on: https://jykng-van.github.io/validate-sin/
