@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ValidateSin from  './validate-sin';
+import Validate from  './validate-sin';
 import './App.css'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   function checkSin(){
     if (sin){
-      const valid_sin = ValidateSin(sin);
+      const valid_sin = Validate(sin);
       //046454286 should pass, also 252929252
       setValid(valid_sin);
       setCheckedSin(true);

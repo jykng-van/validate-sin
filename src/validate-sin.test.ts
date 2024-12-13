@@ -1,18 +1,18 @@
-import ValidateSin from './validate-sin';
+import Validate from './validate-sin';
 
-//probably should have ValidateSin divided up
-describe('ValidateSin', () => {
+//probably should have Validate divided up
+describe('Validate', () => {
     test("Check SIN that isn't all digits", () => {
-        expect(ValidateSin('ab1234567')).toBe(false);
+        expect(Validate('ab1234567')).toBe(false);
     });
     test("Check SIN that isn't 9 digits", () => {
-        expect(ValidateSin('12345678')).toBe(false);
+        expect(Validate('12345678')).toBe(false);
     });
     test("Check SIN that is valid", () => {
-        expect(ValidateSin('046454286')).toBe(true);
+        expect(Validate('046454286')).toBe(true);
     });
     test("Check SIN that is invalid", () => {
-        expect(ValidateSin('123456789')).toBe(false);
+        expect(Validate('123456789')).toBe(false);
     });
 })
 
